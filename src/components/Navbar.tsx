@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-import { NavLink } from "@/components/NavLink";
 import logo from "@/assets/fiter-city-logo.png";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -8,54 +6,67 @@ import { useState } from "react";
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+    setMobileMenuOpen(false);
+  };
+
   return (
     <nav className="sticky top-0 z-50 bg-background border-b border-border shadow-industrial">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+          <button
+            onClick={() => scrollToSection("home")}
+            className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+          >
             <img src={logo} alt="Fiter City Logo" className="h-12 w-12" />
             <span className="text-2xl font-bold text-foreground">Fiter City</span>
-          </Link>
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <NavLink
-              to="/"
+            <button
+              onClick={() => scrollToSection("home")}
               className="text-foreground hover:text-primary transition-colors font-medium"
-              activeClassName="text-primary"
             >
               Home
-            </NavLink>
-            <NavLink
-              to="/about"
+            </button>
+            <button
+              onClick={() => scrollToSection("about")}
               className="text-foreground hover:text-primary transition-colors font-medium"
-              activeClassName="text-primary"
             >
               About
-            </NavLink>
-            <NavLink
-              to="/products"
+            </button>
+            <button
+              onClick={() => scrollToSection("products")}
               className="text-foreground hover:text-primary transition-colors font-medium"
-              activeClassName="text-primary"
             >
               Products
-            </NavLink>
-            <NavLink
-              to="/brands"
+            </button>
+            <button
+              onClick={() => scrollToSection("brands")}
               className="text-foreground hover:text-primary transition-colors font-medium"
-              activeClassName="text-primary"
             >
               Brands
-            </NavLink>
-            <NavLink
-              to="/contact"
+            </button>
+            <button
+              onClick={() => scrollToSection("contact")}
               className="text-foreground hover:text-primary transition-colors font-medium"
-              activeClassName="text-primary"
             >
               Contact
-            </NavLink>
-            <Button asChild className="bg-primary hover:bg-primary-dark">
-              <Link to="/contact">Get a Quote</Link>
+            </button>
+            <Button onClick={() => scrollToSection("contact")} className="bg-primary hover:bg-primary-dark">
+              Get a Quote
             </Button>
           </div>
 
@@ -77,50 +88,38 @@ export const Navbar = () => {
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-border">
             <div className="flex flex-col gap-4">
-              <NavLink
-                to="/"
-                className="text-foreground hover:text-primary transition-colors font-medium px-2 py-2"
-                activeClassName="text-primary"
-                onClick={() => setMobileMenuOpen(false)}
+              <button
+                onClick={() => scrollToSection("home")}
+                className="text-foreground hover:text-primary transition-colors font-medium px-2 py-2 text-left"
               >
                 Home
-              </NavLink>
-              <NavLink
-                to="/about"
-                className="text-foreground hover:text-primary transition-colors font-medium px-2 py-2"
-                activeClassName="text-primary"
-                onClick={() => setMobileMenuOpen(false)}
+              </button>
+              <button
+                onClick={() => scrollToSection("about")}
+                className="text-foreground hover:text-primary transition-colors font-medium px-2 py-2 text-left"
               >
                 About
-              </NavLink>
-              <NavLink
-                to="/products"
-                className="text-foreground hover:text-primary transition-colors font-medium px-2 py-2"
-                activeClassName="text-primary"
-                onClick={() => setMobileMenuOpen(false)}
+              </button>
+              <button
+                onClick={() => scrollToSection("products")}
+                className="text-foreground hover:text-primary transition-colors font-medium px-2 py-2 text-left"
               >
                 Products
-              </NavLink>
-              <NavLink
-                to="/brands"
-                className="text-foreground hover:text-primary transition-colors font-medium px-2 py-2"
-                activeClassName="text-primary"
-                onClick={() => setMobileMenuOpen(false)}
+              </button>
+              <button
+                onClick={() => scrollToSection("brands")}
+                className="text-foreground hover:text-primary transition-colors font-medium px-2 py-2 text-left"
               >
                 Brands
-              </NavLink>
-              <NavLink
-                to="/contact"
-                className="text-foreground hover:text-primary transition-colors font-medium px-2 py-2"
-                activeClassName="text-primary"
-                onClick={() => setMobileMenuOpen(false)}
+              </button>
+              <button
+                onClick={() => scrollToSection("contact")}
+                className="text-foreground hover:text-primary transition-colors font-medium px-2 py-2 text-left"
               >
                 Contact
-              </NavLink>
-              <Button asChild className="bg-primary hover:bg-primary-dark w-full">
-                <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
-                  Get a Quote
-                </Link>
+              </button>
+              <Button onClick={() => scrollToSection("contact")} className="bg-primary hover:bg-primary-dark w-full">
+                Get a Quote
               </Button>
             </div>
           </div>
