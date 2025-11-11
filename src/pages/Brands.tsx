@@ -1,18 +1,15 @@
 import { Card } from "@/components/ui/card";
 
 const brands = [
-  { name: "Bosch", category: "Automotive Filters" },
-  { name: "Mann+Hummel", category: "Industrial Filtration" },
-  { name: "Donaldson", category: "Air & Liquid Filters" },
-  { name: "Parker", category: "Hydraulic Filters" },
-  { name: "Pall Corporation", category: "Industrial Systems" },
-  { name: "Eaton", category: "Fluid Power Solutions" },
-  { name: "Baldwin Filters", category: "Heavy Duty Filters" },
-  { name: "Wix Filters", category: "Automotive & Industrial" },
-  { name: "Fram", category: "Automotive Filters" },
-  { name: "Mahle", category: "Engine Components" },
-  { name: "UFI Filters", category: "Filtration Systems" },
-  { name: "Hengst", category: "Industrial Filters" },
+  { name: "OilWatch", description: "A laboratory that offers oil analysis and test kits to detect machine failures and extend lubricant life." },
+  { name: "WearCheck", description: "Global network specializing in oil and wear particle analysis to optimize machinery performance." },
+  { name: "Donaldson Filtration", description: "Global manufacturer providing custom filtration solutions for engines, vehicles, and industrial systems." },
+  { name: "Fleetguard Filtration", description: "Produces filters, lubricants, and coolants for heavy-duty equipment, improving performance and reducing maintenance." },
+  { name: "GUD Filters", description: "South African brand offering OEM-quality oil, fuel, air, and cabin air filters." },
+  { name: "MANN+HUMMEL", description: "Global filtration leader developing products for air, water, and mobility industries." },
+  { name: "Racor Filtration (Parker)", description: "Specializes in high-efficiency filtration solutions for multiple industries." },
+  { name: "FRAM Filtration", description: "Renowned brand delivering innovative, reliable oil and air filters for vehicles." },
+  { name: "Baldwin Filtration", description: "Global provider of premium filters for engine protection and performance." },
 ];
 
 const Brands = () => {
@@ -20,7 +17,7 @@ const Brands = () => {
     <div className="min-h-screen py-20">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <h1 className="text-5xl font-bold text-foreground mb-6">Brands We Work With</h1>
+          <h1 className="text-5xl font-bold text-foreground mb-6">Trusted Brands We Work With</h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
             We partner with the world's leading filtration manufacturers to bring you the best products in the industry. Our extensive network ensures you have access to premium quality filters from trusted brands.
           </p>
@@ -32,10 +29,10 @@ const Brands = () => {
               key={index}
               className="p-8 text-center hover:shadow-industrial-lg transition-all duration-300 hover:border-primary group"
             >
-              <h3 className="text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+              <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                 {brand.name}
               </h3>
-              <p className="text-muted-foreground">{brand.category}</p>
+              <p className="text-muted-foreground leading-relaxed">{brand.description}</p>
             </Card>
           ))}
         </div>
