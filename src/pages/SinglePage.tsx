@@ -10,15 +10,15 @@ import oilFilterImage from "@/assets/oil-filter.jpg";
 import airFilterImage from "@/assets/air-filter.jpg";
 import waterFilterImage from "@/assets/water-filter.jpg";
 import industrialSystemImage from "@/assets/industrial-system.jpg";
-import baldwinLogo from "@/assets/products/baldwin.svg";
-import donaldsonLogo from "@/assets/products/Donaldson-Filtration-Solutions.svg";
-import fleetguardLogo from "@/assets/products/fleetguard.svg";
-import framLogo from "@/assets/products/fram.svg";
-import gudLogo from "@/assets/products/gudfilters.svg";
-import mannLogo from "@/assets/products/mann+hummel.svg";
-import oilwatchLogo from "@/assets/products/oilwatch.svg";
-import racorLogo from "@/assets/products/racor.svg";
-import wearcheckLogo from "@/assets/products/wearcheck.svg";
+import baldwinLogo from "@/assets/products/baldwin.jpg";
+import donaldsonLogo from "@/assets/products/Donaldson-Filtration-Solutions.png";
+import fleetguardLogo from "@/assets/products/fleetguard.jpg";
+import framLogo from "@/assets/products/fram.jpg";
+import gudLogo from "@/assets/products/gudfilters.png";
+import mannLogo from "@/assets/products/mann+hummel.png";
+import oilwatchLogo from "@/assets/products/oilwatch.png";
+import racorLogo from "@/assets/products/racor.jpg";
+import wearcheckLogo from "@/assets/products/wearcheck.png";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -208,11 +208,11 @@ const SinglePage = () => {
             {brands.map((brand, index) => (
               <Card
                 key={index}
-                className="p-8 text-center hover:shadow-industrial-lg transition-all duration-300 hover:border-primary group"
+                className="p-4 text-center hover:shadow-industrial-lg transition-all duration-300 hover:border-primary group"
               >
                 {brand.image && (
-                  <div className="mb-4 flex items-center justify-center">
-                    <img src={brand.image} alt={brand.name} className="h-12 object-contain" />
+                  <div className="mb-4 flex items-center justify-center p-2 bg-white/50 rounded-md">
+                    <img src={brand.image} alt={brand.name} className="h-24 w-auto object-contain rounded-md shadow-sm" />
                   </div>
                 )}
                 <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
