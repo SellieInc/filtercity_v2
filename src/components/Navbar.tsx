@@ -1,4 +1,4 @@
-import logo from "@/assets/fiter-city-logo.png";
+import logo from "@/assets/Filter-city-logo.png";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
@@ -29,8 +29,8 @@ export const Navbar = () => {
             onClick={() => scrollToSection("home")}
             className="flex items-center gap-3 hover:opacity-80 transition-opacity"
           >
-            <img src={logo} alt="Fiter City Logo" className="h-12 w-12" />
-            <span className="text-2xl font-bold text-foreground">Fiter City</span>
+            <img src={logo} alt="Filter City Logo" className="h-12 w-24" />
+            <span className="text-2xl font-bold text-foreground">Filter City</span>
           </button>
 
           {/* Desktop Navigation */}

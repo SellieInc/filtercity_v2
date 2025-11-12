@@ -19,9 +19,9 @@ export const Footer = () => {
         })}
       </script>
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <h3 className="text-xl font-bold text-foreground mb-4">Fiter City</h3>
+            <h3 className="text-xl font-bold text-foreground mb-4">Filter City</h3>
             <p className="text-muted-foreground mb-4">
               Premium filtration products and solutions for oil, air, water, and industrial systems.
             </p>
@@ -32,9 +32,11 @@ export const Footer = () => {
               <li className="flex items-center gap-2 text-muted-foreground">
                 <Phone className="h-5 w-5 text-primary flex-shrink-0" />
                 <p>+27-(0) 689 885 351 - Filter City (PTY) Ltd</p>
+              </li>
+              <li className="flex items-center gap-2 text-muted-foreground">
+                <Phone className="h-5 w-5 text-primary flex-shrink-0" />
                 <p>+27-(0) 843 644 018 - Melanie</p>
               </li>
-
               <li className="flex items-center gap-2 text-muted-foreground">
                 <Mail className="h-5 w-5 text-primary flex-shrink-0" />
                 <p>melanies.supply@gmail.com</p>

@@ -6,21 +6,77 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Droplet, Wind, Settings, Shield, Award, Users, Target, MapPin, Phone, Mail, Clock } from "lucide-react";
-import oilFilterImage from "@/assets/oil-filter.jpg";
-import airFilterImage from "@/assets/air-filter.jpg";
-import waterFilterImage from "@/assets/water-filter.jpg";
-import industrialSystemImage from "@/assets/industrial-system.jpg";
-import baldwinLogo from "@/assets/products/baldwin.jpg";
-import donaldsonLogo from "@/assets/products/Donaldson-Filtration-Solutions.png";
-import fleetguardLogo from "@/assets/products/fleetguard.jpg";
-import framLogo from "@/assets/products/fram.jpg";
-import gudLogo from "@/assets/products/gudfilters.png";
-import mannLogo from "@/assets/products/mann+hummel.png";
-import oilwatchLogo from "@/assets/products/oilwatch.png";
-import racorLogo from "@/assets/products/racor.jpg";
-import wearcheckLogo from "@/assets/products/wearcheck.png";
+import baldwinLogo from "@/assets/brands/baldwin.jpg";
+import donaldsonLogo from "@/assets/brands/Donaldson-Filtration-Solutions.png";
+import fleetguardLogo from "@/assets/brands/fleetguard.jpg";
+import framLogo from "@/assets/brands/fram.jpg";
+import gudLogo from "@/assets/brands/gudfilters.png";
+import mannLogo from "@/assets/brands/mann+hummel.png";
+import oilwatchLogo from "@/assets/brands/oilwatch.png";
+import racorLogo from "@/assets/brands/racor.jpg";
+import wearcheckLogo from "@/assets/brands/wearcheck.png";
+import fuelfilters from "@/assets/products/fuelfilters.jpg";
+import oilfilters from "@/assets/products/oilfilters.jpg";
+import coolantfilter from "@/assets/products/coolantfilter.jpg";
+import airfiltration from "@/assets/products/airfiltration.png";
+import coolantes from "@/assets/products/coolantes.jpg";
+import oatscoolant from "@/assets/products/oatscoolant.png";
+import racorfiltration from "@/assets/products/racorFiltration.jpg";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from 'emailjs-com';
+
+const products = [
+  {
+    id: 13,
+    name: "Fuel Filters",
+    description: "Our fuel filters are engineered to keep your engines running smoothly by removing contaminants from fuel systems, thus extending the lifespan of your equipment.",
+    price: 49.99,
+    image: fuelfilters,
+  },
+  {
+    id: 14,
+    name: "Oil Filters",
+    description: "Designed to maintain the purity of your engine oil, our oil filters help reduce wear and tear and improve overall engine efficiency.",
+    price: 49.99,
+    image: oilfilters,
+  },
+  {
+    id: 15,
+    name: "Water / Coolant Filters",
+    description: "Our water filters purify and protect your systems from water contamination, ensuring your equipment operates at peak performance.",
+    price: 49.99,
+    image: coolantfilter,
+  },
+  {
+    id: 16,
+    name: "Air Filtration",
+    description: "Fleetguard air filtration products are designed to protect engines from dust, dirt. and other contaminants. They are used in a variety of industries and environments.",
+    price: 49.99,
+    image: airfiltration,
+  },
+  {
+    id: 17,
+    name: "Coolant ES Compleat",
+    description: "ES Compleat is a coolant and antifreeze from Fleetguard that can be used in heavy-duty and light-duty diesel, natural gas, and gasoline engines.",
+    price: 59.99,
+    image: coolantes,
+  },
+  {
+    id: 18,
+    name: "Oats Coolant Long Life",
+    description: "Fleetguard OAT coolant refers to a type of coolant produced by that utilizes Organic Acid Technology (OAT) to provide long-lasting corrosion protection in engine cooling systems, designed to last for the life of the engine with proper maintenance and is compatible with various engine types including diesel, gasoline, and natural gas engines.",
+    price: 69.99,
+    image: oatscoolant,
+  },
+  {
+    id: 10,
+    name: "Racor Filtration",
+    description: "Racor, a distinguished subbrand of Parker. specializes in providing top-tier filtration solutions. Focused on filters that enhance efficiency and performance, Racor's products encompass a wide range of applications across various industries.",
+    price: 49.99,
+    image: racorfiltration,
+  },
+];
 
 const brands = [
   { name: "OilWatch", description: "A laboratory that offers oil analysis and test kits to detect machine failures and extend lubricant life.", image: oilwatchLogo },
@@ -44,11 +100,21 @@ const SinglePage = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24 hours.",
-    });
-    setFormData({ name: "", email: "", message: "" });
+    const form = e.target as HTMLFormElement;
+
+    emailjs.sendForm('service_or0hipb', 'template_anm6pba', form, 'zmv2mMz5eAzMpejyt')
+      .then((result) => {
+        toast({
+          title: "Message Sent!",
+          description: "We'll get back to you within 24 hours.",
+        });
+        setFormData({ name: "", email: "", message: "" });
+      }, (error) => {
+        toast({
+          title: "Message failed!",
+          description: "Please try again later.",
+        });
+      });
   };
 
   return (
@@ -62,7 +128,7 @@ const SinglePage = () => {
       <section id="about" className="py-20 bg-background scroll-mt-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-5xl font-bold text-foreground mb-6">About Fiter City</h2>
+            <h2 className="text-5xl font-bold text-foreground mb-6">About Filter City</h2>
             <p className="text-xl text-muted-foreground leading-relaxed">
               We specialize in providing high-quality filters for marine, industrial, and agricultural applications. Our extensive range includes fuel, oil, water, and air filters designed to safeguard equipment, ensure peak performance, and boost efficiency. Trust in our commitment to quality and reliability.
             </p>
@@ -101,7 +167,7 @@ const SinglePage = () => {
           <div className="text-center mb-16">
             <h3 className="text-4xl font-bold text-foreground mb-4">What We Do</h3>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Fiter City has been providing premium filtration solutions for over 20 years. Our commitment to quality and expertise ensures your systems run at peak performance.
+              Filter City has been providing premium filtration solutions for over 20 years. Our commitment to quality and expertise ensures your systems run at peak performance.
             </p>
           </div>
 
@@ -150,46 +216,14 @@ const SinglePage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            <ProductCard
-              title="Oil Filters"
-              description="Designed to maintain the purity of your engine oil, our oil filters help reduce wear and tear and improve overall engine efficiency."
-              image={oilFilterImage}
-            />
-            <ProductCard
-              title="Air Filtration"
-              description="Fleetguard air filtration products are designed to protect engines from dust, dirt, and other contaminants. They are used in a variety of industries and environments."
-              image={airFilterImage}
-            />
-            <ProductCard
-              title="Water / Coolant Filters"
-              description="Our water filters purify and protect your systems from water contamination, ensuring your equipment operates at peak performance."
-              image={waterFilterImage}
-            />
-            <ProductCard
-              title="Industrial Filtration Systems"
-              description="Complete turnkey filtration solutions for manufacturing facilities and processing plants."
-              image={industrialSystemImage}
-            />
-            <ProductCard
-              title="Hydraulic Filters"
-              description="Precision hydraulic filters designed to protect expensive hydraulic systems from contamination."
-              image={oilFilterImage}
-            />
-            <ProductCard
-              title="Fuel Filters"
-              description="Our fuel filters are engineered to keep your engines running smoothly by removing contaminants from fuel systems, thus extending the lifespan of your equipment."
-              image={airFilterImage}
-            />
-            <ProductCard
-              title="Coolant ES Compleat"
-              description="ES Compleat is a coolant and antifreeze from Fleetguard that can be used in heavy-duty and light-duty diesel, natural gas, and gasoline engines. It provides reliable corrosion protection and thermal stability for modern engines."
-              image={industrialSystemImage}
-            />
-            <ProductCard
-              title="OAT Coolant - Long Life"
-              description="Fleetguard OAT coolant utilizes Organic Acid Technology (OAT) to provide long-lasting corrosion protection in engine cooling systems. Designed for extended life with proper maintenance and compatible with various engine types."
-              image={waterFilterImage}
-            />
+            {products.map((product) => (
+              <ProductCard
+                key={product.id}
+                title={product.name}
+                description={product.description}
+                image={product.image}
+              />
+            ))}
           </div>
         </div>
       </section>
