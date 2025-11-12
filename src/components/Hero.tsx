@@ -1,8 +1,21 @@
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-filtration.jpg";
 
 export const Hero = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
   return (
     <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
       <div
@@ -22,11 +35,11 @@ export const Hero = () => {
             Experts in Oil, Air, and Water Filtration Solutions
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button asChild size="lg" className="bg-primary hover:bg-primary-dark text-lg">
-              <Link to="/about">Learn More</Link>
+            <Button onClick={() => scrollToSection("about")} size="lg" className="bg-primary hover:bg-primary-dark text-lg">
+              Learn More
             </Button>
-            <Button asChild size="lg" variant="outline" className="text-lg border-2 hover:bg-secondary">
-              <Link to="/contact">Get a Quote</Link>
+            <Button onClick={() => scrollToSection("contact")} size="lg" variant="outline" className="text-lg border-2 hover:bg-secondary">
+              Get a Quote
             </Button>
           </div>
         </div>

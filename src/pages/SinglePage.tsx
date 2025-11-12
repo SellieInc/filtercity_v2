@@ -20,7 +20,7 @@ const brands = [
   { name: "Fleetguard Filtration", description: "Produces filters, lubricants, and coolants for heavy-duty equipment, improving performance and reducing maintenance." },
   { name: "GUD Filters", description: "South African brand offering OEM-quality oil, fuel, air, and cabin air filters." },
   { name: "MANN+HUMMEL", description: "Global filtration leader developing products for air, water, and mobility industries." },
-  { name: "Racor Filtration (Parker)", description: "Specializes in high-efficiency filtration solutions for multiple industries." },
+  { name: "Racor Filtration (Parker)", description: "Racor, a distinguished subbrand of Parker, specializes in providing top-tier filtration solutions. Focused on filters that enhance efficiency and performance, Racor's products encompass a wide range of applications across various industries." },
   { name: "FRAM Filtration", description: "Renowned brand delivering innovative, reliable oil and air filters for vehicles." },
   { name: "Baldwin Filtration", description: "Global provider of premium filters for engine protection and performance." },
 ];
@@ -55,7 +55,7 @@ const SinglePage = () => {
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-5xl font-bold text-foreground mb-6">About Fiter City</h2>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              For over two decades, Fiter City has been the trusted name in filtration solutions. We specialize in providing premium oil, air, and water filters, along with comprehensive industrial filtration systems that ensure optimal performance and longevity.
+              We specialize in providing high-quality filters for marine, industrial, and agricultural applications. Our extensive range includes fuel, oil, water, and air filters designed to safeguard equipment, ensure peak performance, and boost efficiency. Trust in our commitment to quality and reliability.
             </p>
           </div>
 
@@ -77,20 +77,6 @@ const SinglePage = () => {
             <Card className="border-2 hover:shadow-industrial-lg transition-all">
               <CardHeader>
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                  <Award className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle className="text-2xl">Industry Experience</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  With over 20 years in the filtration industry, our team brings unmatched expertise and knowledge to every project and product recommendation.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 hover:shadow-industrial-lg transition-all">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <Users className="h-6 w-6 text-primary" />
                 </div>
                 <CardTitle className="text-2xl">Customer Focus</CardTitle>
@@ -98,20 +84,6 @@ const SinglePage = () => {
               <CardContent>
                 <p className="text-muted-foreground">
                   We prioritize our customers' needs, offering personalized solutions and dedicated support to ensure complete satisfaction with every purchase.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 hover:shadow-industrial-lg transition-all">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                  <Target className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle className="text-2xl">Precision Solutions</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  We provide precisely engineered filtration solutions tailored to meet the specific requirements of various industries and applications.
                 </p>
               </CardContent>
             </Card>
@@ -171,17 +143,17 @@ const SinglePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             <ProductCard
               title="Oil Filters"
-              description="Premium automotive and industrial oil filters engineered for superior engine protection and extended service life."
+              description="Designed to maintain the purity of your engine oil, our oil filters help reduce wear and tear and improve overall engine efficiency."
               image={oilFilterImage}
             />
             <ProductCard
-              title="Air Filters"
-              description="High-efficiency particulate air filters that capture dust, pollen, and contaminants."
+              title="Air Filtration"
+              description="Fleetguard air filtration products are designed to protect engines from dust, dirt, and other contaminants. They are used in a variety of industries and environments."
               image={airFilterImage}
             />
             <ProductCard
-              title="Water Filters"
-              description="Advanced water filtration systems providing clean, safe drinking water."
+              title="Water / Coolant Filters"
+              description="Our water filters purify and protect your systems from water contamination, ensuring your equipment operates at peak performance."
               image={waterFilterImage}
             />
             <ProductCard
@@ -196,8 +168,18 @@ const SinglePage = () => {
             />
             <ProductCard
               title="Fuel Filters"
-              description="High-performance fuel filtration products that remove water and particles, protecting engines."
+              description="Our fuel filters are engineered to keep your engines running smoothly by removing contaminants from fuel systems, thus extending the lifespan of your equipment."
               image={airFilterImage}
+            />
+            <ProductCard
+              title="Coolant ES Compleat"
+              description="ES Compleat is a coolant and antifreeze from Fleetguard that can be used in heavy-duty and light-duty diesel, natural gas, and gasoline engines. It provides reliable corrosion protection and thermal stability for modern engines."
+              image={industrialSystemImage}
+            />
+            <ProductCard
+              title="OAT Coolant - Long Life"
+              description="Fleetguard OAT coolant utilizes Organic Acid Technology (OAT) to provide long-lasting corrosion protection in engine cooling systems. Designed for extended life with proper maintenance and compatible with various engine types."
+              image={waterFilterImage}
             />
           </div>
         </div>
@@ -299,31 +281,13 @@ const SinglePage = () => {
                 <CardContent className="pt-6">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                      <MapPin className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground mb-2 text-lg">Address</h3>
-                      <p className="text-muted-foreground">
-                        123 Industrial Park Avenue<br />
-                        Manufacturing District<br />
-                        City, State 12345
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2">
-                <CardContent className="pt-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
                       <Phone className="h-6 w-6 text-primary" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-foreground mb-2 text-lg">Phone</h3>
                       <p className="text-muted-foreground">
-                        +1 (555) 123-4567<br />
-                        Monday - Friday: 8am - 6pm
+                        Phone: +27-(0) 689 885 351 - Filter City (PTY) Ltd<br />
+                        Phone: +27-(0) 843 644 018 - Melanie
                       </p>
                     </div>
                   </div>
@@ -339,8 +303,7 @@ const SinglePage = () => {
                     <div>
                       <h3 className="font-semibold text-foreground mb-2 text-lg">Email</h3>
                       <p className="text-muted-foreground">
-                        info@fitercity.com<br />
-                        sales@fitercity.com
+                        melanies.supply@gmail.com
                       </p>
                     </div>
                   </div>
