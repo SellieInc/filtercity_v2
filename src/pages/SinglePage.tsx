@@ -10,19 +10,28 @@ import oilFilterImage from "@/assets/oil-filter.jpg";
 import airFilterImage from "@/assets/air-filter.jpg";
 import waterFilterImage from "@/assets/water-filter.jpg";
 import industrialSystemImage from "@/assets/industrial-system.jpg";
+import baldwinLogo from "@/assets/products/baldwin.svg";
+import donaldsonLogo from "@/assets/products/Donaldson-Filtration-Solutions.svg";
+import fleetguardLogo from "@/assets/products/fleetguard.svg";
+import framLogo from "@/assets/products/fram.svg";
+import gudLogo from "@/assets/products/gudfilters.svg";
+import mannLogo from "@/assets/products/mann+hummel.svg";
+import oilwatchLogo from "@/assets/products/oilwatch.svg";
+import racorLogo from "@/assets/products/racor.svg";
+import wearcheckLogo from "@/assets/products/wearcheck.svg";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 const brands = [
-  { name: "OilWatch", description: "A laboratory that offers oil analysis and test kits to detect machine failures and extend lubricant life." },
-  { name: "WearCheck", description: "Global network specializing in oil and wear particle analysis to optimize machinery performance." },
-  { name: "Donaldson Filtration", description: "Global manufacturer providing custom filtration solutions for engines, vehicles, and industrial systems." },
-  { name: "Fleetguard Filtration", description: "Produces filters, lubricants, and coolants for heavy-duty equipment, improving performance and reducing maintenance." },
-  { name: "GUD Filters", description: "South African brand offering OEM-quality oil, fuel, air, and cabin air filters." },
-  { name: "MANN+HUMMEL", description: "Global filtration leader developing products for air, water, and mobility industries." },
-  { name: "Racor Filtration (Parker)", description: "Racor, a distinguished subbrand of Parker, specializes in providing top-tier filtration solutions. Focused on filters that enhance efficiency and performance, Racor's products encompass a wide range of applications across various industries." },
-  { name: "FRAM Filtration", description: "Renowned brand delivering innovative, reliable oil and air filters for vehicles." },
-  { name: "Baldwin Filtration", description: "Global provider of premium filters for engine protection and performance." },
+  { name: "OilWatch", description: "A laboratory that offers oil analysis and test kits to detect machine failures and extend lubricant life.", image: oilwatchLogo },
+  { name: "WearCheck", description: "Global network specializing in oil and wear particle analysis to optimize machinery performance.", image: wearcheckLogo },
+  { name: "Donaldson Filtration", description: "Global manufacturer providing custom filtration solutions for engines, vehicles, and industrial systems.", image: donaldsonLogo },
+  { name: "Fleetguard Filtration", description: "Produces filters, lubricants, and coolants for heavy-duty equipment, improving performance and reducing maintenance.", image: fleetguardLogo },
+  { name: "GUD Filters", description: "South African brand offering OEM-quality oil, fuel, air, and cabin air filters.", image: gudLogo },
+  { name: "MANN+HUMMEL", description: "Global filtration leader developing products for air, water, and mobility industries.", image: mannLogo },
+  { name: "Racor Filtration (Parker)", description: "Racor, a distinguished subbrand of Parker, specializes in providing top-tier filtration solutions. Focused on filters that enhance efficiency and performance, Racor's products encompass a wide range of applications across various industries.", image: racorLogo },
+  { name: "FRAM Filtration", description: "Renowned brand delivering innovative, reliable oil and air filters for vehicles.", image: framLogo },
+  { name: "Baldwin Filtration", description: "Global provider of premium filters for engine protection and performance.", image: baldwinLogo },
 ];
 
 const SinglePage = () => {
@@ -201,6 +210,11 @@ const SinglePage = () => {
                 key={index}
                 className="p-8 text-center hover:shadow-industrial-lg transition-all duration-300 hover:border-primary group"
               >
+                {brand.image && (
+                  <div className="mb-4 flex items-center justify-center">
+                    <img src={brand.image} alt={brand.name} className="h-12 object-contain" />
+                  </div>
+                )}
                 <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                   {brand.name}
                 </h3>
