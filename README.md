@@ -1,73 +1,65 @@
-# Welcome to your Lovable project
+# FilterCity v2
 
-## Project info
+A high-performance React + TypeScript web application built with Vite, Tailwind CSS, and shadcn/ui components.
 
-**URL**: https://lovable.dev/projects/472d2414-8f82-4ae5-91ba-3690bbcb1a4f
+## Getting Started
 
-## How can I edit this code?
+### Prerequisites
 
-There are several ways of editing your application.
+- Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-**Use Lovable**
+### Installation
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/472d2414-8f82-4ae5-91ba-3690bbcb1a4f) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+`sh
+# Step 1: Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Step 2: Navigate to the project directory
+cd filtercity_v2
 
-# Step 3: Install the necessary dependencies.
+# Step 3: Install the necessary dependencies
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Start the development server
 npm run dev
-```
+`
 
-**Edit a file directly in GitHub**
+### Available Scripts
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- `npm run dev` - Start the development server with hot module replacement
+- `npm run build` - Build the application for production
+- `npm run build:dev` - Build the application in development mode
+- `npm run lint` - Run ESLint to check code quality
+- `npm run preview` - Preview the production build locally
 
-**Use GitHub Codespaces**
+## Project Structure
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+`
+src/
+ components/          # React components including UI components
+ pages/              # Page components
+ hooks/              # Custom React hooks
+ lib/                # Utility functions and helpers
+ assets/             # Static assets
+ App.tsx             # Main App component
+ main.tsx            # Application entry point
+`
 
-## What technologies are used for this project?
+## Technology Stack
 
-This project is built with:
+- **React** - UI library
+- **TypeScript** - Type-safe JavaScript
+- **Vite** - Modern build tool
+- **Tailwind CSS** - Utility-first CSS framework
+- **shadcn/ui** - High-quality React components
+- **React Query** - Data fetching and caching
+- **React Hook Form** - Form management
+- **Lucide React** - Icon library
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Contributing
 
-## How can I deploy this project?
+Feel free to submit issues and enhancement requests!
 
-Simply open [Lovable](https://lovable.dev/projects/472d2414-8f82-4ae5-91ba-3690bbcb1a4f) and click on Share -> Publish.
+## License
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+This project is open source and available under the MIT License.
